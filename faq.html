@@ -25,7 +25,7 @@
                 <li class="nav-item"><a class="nav-link" href="index.html#objects">Объекты</a></li>
                 <li class="nav-item"><a class="nav-link" href="reviews.html">Отзывы</a></li>
                 <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                <li class="nav-item"><a class="btn btn-primary ms-3" href="#">Войти</a></li>
+                <li class="nav-item"><button class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#authModal">Войти</button></li>
             </ul>
         </div>
     </div>
@@ -145,6 +145,70 @@
 </div>
 </footer>
 
+<!-- ================= AUTH ================= -->
+<div class="modal fade" id="authModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Вход и регистрация</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs mb-3" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="signin-tab" data-bs-toggle="tab" data-bs-target="#signin" type="button" role="tab">Вход</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab">Регистрация</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Sign In -->
+                    <div class="tab-pane fade show active" id="signin" role="tabpanel">
+                        <form id="signinForm">
+                            <div class="mb-3">
+                                <label for="signinEmail" class="form-label">Email или логин</label>
+                                <input type="text" class="form-control" id="signinEmail" placeholder="Введите email или логин" required>
+                                <small class="text-danger" id="signinEmailError" style="display:none;">Пожалуйста, введите email или логин</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signinPassword" class="form-label">Пароль</label>
+                                <input type="password" class="form-control" id="signinPassword" placeholder="Введите пароль" required>
+                                <small class="text-danger" id="signinPasswordError" style="display:none;">Пожалуйста, введите пароль</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Войти</button>
+                        </form>
+                    </div>
+
+                    <!-- Sign Up -->
+                    <div class="tab-pane fade" id="signup" role="tabpanel">
+                        <form id="signupForm">
+                            <div class="mb-3">
+                                <label for="signupEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="signupEmail" placeholder="Введите email" required>
+                                <small class="text-danger" id="signupEmailError" style="display:none;">Пожалуйста, введите корректный email</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupPassword" class="form-label">Пароль</label>
+                                <input type="password" class="form-control" id="signupPassword" placeholder="Минимум 6 символов" required>
+                                <small class="text-danger" id="signupPasswordError" style="display:none;">Пароль должен содержать минимум 6 символов</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signupConfirmPassword" class="form-label">Подтвердите пароль</label>
+                                <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Повторите пароль" required>
+                                <small class="text-danger" id="signupConfirmPasswordError" style="display:none;">Пароли не совпадают</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>
